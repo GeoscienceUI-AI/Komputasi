@@ -1,3 +1,3 @@
-# Komputasi Geosain UI
+# Komputasi Geosains UI
 
 Silahkan Sharing Ilmu Coding
