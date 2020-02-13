@@ -1,0 +1,395 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 11 15:17:39 2019
+
+@author: user
+
+PERTEMUAN 1
+BASIC PYTHON PROGRAMMING
+"""
+
+# Ini namanya comment didahului dengan tanda pagar # atau hashtag
+
+a = 5
+# Disini saya assign nilai 5 pada variabel a
+# a adalah variabel
+# = adalah assignment operator
+# 5 adalah operand
+'''
+Kalo yang ini namanya multi line comment
+Diawali dengan tanda petik 3 kali
+bisa petik tunggal bisa petik ganda
+Fungsinya untuk memberi komentar yang lebih panjang
+'''
+
+############## VARIABLE #################
+
+'''
+Varible itu adalah memori yang digunakan untuk menyimpan sebuah nilai
+Artinya, semakin banyak variable yang dibuat, semakin banyak
+memori komputer yang digunakan
+'''
+
+gelas = 'Jus Jeruk'
+
+print gelas
+# perintah print berfungsi untuk menampilkan
+
+gelas = 'Jus Melon'
+print gelas
+
+print 'Gelas sekarang berisi', gelas
+
+# Sehingga variable berisi nilai yang terakhir di assign
+
+
+# Keywords adalah kata2 yang tidak bisa digunakan sebagai variabel
+# contoh lambda import continue 
+
+####################### TIPE DATA ###########################
+
+# Numeric
+# Adalah data yang berupa angka; integer, float, complex
+
+data_integer = -10
+data_float = 5.6789
+data_complex = 10 + 5j
+
+# List
+# Variable yang mampu menyimpan sejumlah data
+# Data data tersebut bisa dari beragam tipe
+# Isinya bisa kita ubah atau update
+
+kotak_list = ['Ketoprak', 18079 , ' Gado-gado', 'Sate ayam', 'Sepeda']
+
+print kotak_list [0]
+# karena index python dimulai dari 0
+
+kotak_list [1] = 'Bubur Ayam'
+# Mengganti 18079 dengan Bubur Ayam
+print kotak_list
+
+del kotak_list [4]
+# Menghilangkan Sepeda dari kotak_list
+print kotak_list
+
+# Tuple
+# Mirip dengan list hanya saja tidak bisa diubah2
+# Tuple lebih cepat dari list
+
+kotak_tuple = ('mobil','motor','perahu','delman')
+print kotak_tuple [0]
+
+# Set
+# adalah himpunan
+# setiap anggota himpunan harus unik
+# set dibuat menggunakan kurung kurawal
+
+kotak_set = {1,2,3,4,5,6,7,8,2,2,3,4,17}
+print kotak_set
+
+# Dictionary
+# adalah kamus
+# dimana kita bisa memasukkan sebuah nilai kedalam sebuah KEY
+
+kotak_dict = {'Nama': 'Abdul', 'Umur': 19}
+# menampilkan nama
+print kotak_dict ['Nama'], kotak_dict ['Umur']
+
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 18 15:13:39 2019
+
+@author: user
+"""
+
+### CONDITIONAL STATEMENT ###
+# Pemberian perlakukan bergantung pada kondisi objek
+# Dengan menggunakan "if" statement
+
+# IF STATEMENT
+'''
+masukan = input('Masukkan sebuah bilangan bulat positif: ')
+# fungsi input meminta pengguna untuk memasukkan sebuah data
+
+if masukan < 0:
+    print "Maaf! Angka yang anda masukkan bernilai negatif"
+
+print "Terima kasih"
+'''
+
+# IF.. ELSE.. STATEMENT
+'''
+masukan = input('Masukan sebuah bilangan bulat :')
+
+# Jika sisa pembagian angka terhadap 2 adalah 0
+# (masukan%2 == 0)
+# Jika sisa pembagian angka terhadap 2 tidak smdgn 0
+# (masukan%2 != 0)
+
+if masukan % 2 != 0:
+    print "Angka yang anda masukan adalah bilangan ganjil"
+else:
+    print "Angka yang anda masukan adalah bilangan genap"
+'''
+
+# IF.. ELIF.. ELSE.. STATEMENT
+# Digunakan jika ada lebih dari 2 analisa kondisi
+'''
+cowo2017 = ['adib','cikal','sadan','wahyu','anto']
+cewe2017 = ['pipiw','epi','olivia','sari','icha']
+
+# untuk menginput data string gunakan raw_input
+nama = raw_input('Masukan sebuah nama :')
+
+if nama in cowo2017:
+    print nama, " adalah mhs cowo 2017"
+elif nama in cewe2017:
+    print nama, " adalah mhs cewe 2017"
+else:
+    print nama, " bukan mahasiswa, mungkin orang kantin"
+'''
+### PLOTTING ###
+# Visualisasi data menggunakan modul matplotlib
+# Beri alias pada matplotlib.pyplot sebagai plt
+import matplotlib.pyplot as plt
+
+# Defisinikan anggota x
+x = [1,2,3,4,5]
+
+# Definisikan anggota y
+y = [1,4,9,16,25]
+
+# x dan y harus mempunyai jumlah anggota yang sama
+plt.plot(x,y,'ro')
+plt.title('Grafik Kuadrat')
+plt.xlabel('Domain')
+plt.ylabel('Kodomain')
+
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb 25 15:07:42 2019
+
+@author: MARYADI
+"""
+
+'''
+PEKAN 4
+LOOPING STATEMENT
+FOR LOOP, WHILE LOOP
+'''
+
+### For Loop ###
+'''
+# Melakukan proses berulang-ulang
+# Dalam rentang yang ditentukan
+
+# Membuat sequence sendiri
+
+angka = [1,2,3,4,5,6,7,8,9]
+
+for setiap_angka in angka:
+    print setiap_angka#*2   
+
+# Membuat sequence dengan fungsi 'range()'
+# argumen range(start,stop,interval)
+print ''
+for i in range(1,10):
+    print i
+
+# Membuat sequence dari sequence yang sudah ada
+print ''
+# Fungsi len menghasilkan panjang dari sebuah list
+# print len(angka)
+# berfungsi jika ukuran data tidak diketahui pasti/berubah2
+
+for i in range(len(angka)): #sama dengan range(9)
+    print i    
+    
+# CONTOH
+print ''
+# Menjumlah nilai
+nilai_mhs = [30,25,43,91,78]
+nilai = 0
+for setiap_nilai in nilai_mhs:
+    nilai = nilai + setiap_nilai
+    
+print 'Total nilai adalah ', nilai
+nilai_rata2 = nilai/len(nilai_mhs)
+print 'Nilai integer rata2nya adalah ', nilai_rata2
+nilai_floatrata2 = float(nilai)/float(len(nilai_mhs))
+# float(nilai) berarti merubah variabel 'nilai' menjadi bentuk desimal
+print 'Nilai desimal rata2nya adalah ', nilai_floatrata2
+
+'''
+### WHILE LOOP ###
+# Pengulangan proses selama suatu kondisi terpenuhi
+
+# Contoh: Membilang dari 1 s/d 10
+'''
+nilai_awal = 1
+
+while nilai_awal <= 10:
+    print nilai_awal
+    nilai_awal = nilai_awal + 1 # Update nilai awal
+'''
+
+# Contoh: Kuota maksimum
+
+pendaftar = ['cikal','lutfi','sugandi','selfio','fitria',
+             'sari','sadan','rizki','kiki','epi','piero']
+
+jumlah_pendaftar = len(pendaftar) # Mengetahui jumlah pendaftar
+
+kuota_max = input('Kuota Maksimumnya berapa? ') # Menentukan kuota maksimum
+
+# Mendelete peserta yang daftar belakangan
+while jumlah_pendaftar > kuota_max:
+    del(pendaftar[jumlah_pendaftar-1]) # mendelete pendaftar[10] dst.
+    jumlah_pendaftar = len(pendaftar) # Update jumlah pendaftar
+    #print pendaftar
+    #print ''
+    
+print pendaftar # Menampilkan pendaftar yang lolos
+
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 04 15:17:41 2019
+
+PEKAN KE-5a
+BREAK and CONTINUE STATEMENT
+
+"""
+
+angka = [1,2,3,4,5,6,7,8,9]
+
+print "BREAK di angka 5"
+
+for setiap_angka in angka:
+    if setiap_angka == 5: # kondisi yang disyaratkan 
+        break
+    else: # Jika tidak menemui kondisi
+        print setiap_angka
+        
+
+print ''
+print "CONTINUE pada angka 5"
+
+for setiap_angka in angka:
+    if setiap_angka == 5: # kondisi yang disyaratkan 
+        continue
+    else: # Jika tidak menemui kondisi
+        print setiap_angka
+        
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 04 15:37:21 2019
+
+PEKAN KE-5
+DEFINE A FUNCTION
+"""
+
+# OPERATOR ARITMATIKA
+# Penjumlahan -> (+)
+# Pengurangan -> (-)
+# Perkalian -> (*)
+# Pembagian -> (/)
+# Perpangkatan -> (**)
+# Remainder -> (%)
+
+
+# Membuat fungsi gelombang
+# Sebuah fungsi diawali dengan perintah def
+# def singkatan dari define
+
+# Mengimpor library numpy
+# Yaitu library yang memuat numerical function
+import numpy as np
+
+def gelombang1(a,w,t,k,x):
+    y1 = a*np.sin(w*t-k*x) # fungsinya
+    return y1              # nilai hasil operasi fungsi
+
+def gelombang2(a,w,t,k,x):
+    y2 = a*np.sin(w*t-k*x+np.pi/4)
+    return y2
+    
+def gelombang3(a,w,t,k,x):
+    y3 = a*np.sin(w*t-k*x+np.pi/6)
+    return y3
+
+# Menghitung simpangan y pada selang waktu t
+# Tentukan global variable
+a = 0.1
+w = 1
+t = np.linspace(1,100,100)
+k = 2
+x = 4 
+
+superposisi = gelombang1(a,w,t,k,x)+gelombang2(a,w,t,k,x)+gelombang3(a,w,t,k,x)
+import matplotlib.pyplot as plt
+
+frame = plt.figure() # Menyiapkan kanvas
+plot1 = frame.add_subplot(2,2,1) # Menambahkan subplot di posisi 1 dari matrix 2X2
+plot1.plot(t,gelombang1(a,w,t,k,x),'r')
+
+plot2 = frame.add_subplot(2,2,2) # Menambahkan subplot di posisi 2 dari matrix 2X2
+plot2.plot(t,gelombang2(a,w,t,k,x),'g')
+
+plot3 = frame.add_subplot(2,2,3)
+plot3.plot(t,gelombang3(a,w,t,k,x),'y')
+
+plot4 = frame.add_subplot(2,2,4)
+plot4.plot(t,superposisi)
+
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 11 15:22:22 2019
+
+@author: MARYADI
+
+FILE HANDLING
+"""
+
+# Membuat File Output
+
+filebaru = open('contoh2.txt','w')
+filebaru.write('FILE ITU')
+filebaru.close()
+
+# Cara lain untuk membuat file tanpa harus close
+
+with open('example.csv','w') as filebaru2:
+    filebaru2.write('Data Gravity\n')
+    filebaru2.write('X Coord,Y Coord,Bouguer Gravity\n')
+    filebaru2.write('500,200,6\n')
+
+# Menambahkan data pada file yang sudah ada
+
+with open('example.csv','a') as f:
+    f.write('500,250,7\n')
+    f.write('500,300,8\n')
+    f.write('500,350,9\n')
+    f.write('500,400,10\n')
+
+# Tambahin lagi
+xcoord = [500,500,500,500,500,500,500,500,500,500]
+ycoord = [450,500,550,600,650,700,750,800,850,900]
+bouguer = [2,3,6,5,7,5,6,9,6,10]
+
+with open('example.csv','a') as f:
+    for index in range(len(xcoord)):
+        f.write('{},{},{}\n'.format(xcoord[index],
+                ycoord[index],bouguer[index]))
+        
+# Membaca File
+
+# Menyimpan isi file dalam variabel 'data'
+data = open('example.csv','r')
+#print data.read(4) # Membaca semua data per karakter (default: semua)
+# Line/karakter yang sudah dibaca, tidak dibaca lagi
+#print data.read(8)
+#print data.readline() # Membaca per line (default 1)
+#print data.readlines() # membaca beberapa line (default: semua)
+# menambahkan item pada variabel kosong
+# gunakan fungsi append
