@@ -48,13 +48,13 @@ plt.savefig('1a', dpi=300)
 z = v1*rho #Cara mencari nilai Impedansi akustik
 v = v1/v2 # Nilai Vp/Vs
 
-figb= plt.figure(figsize = (15, 7)) #Ukuran Bingkai
-plt1b = figb.add_subplot(121) #Lokasi plot ada di Matriks 2x2 di Baris 1 Colum 1
-plt1b.set_title("Vp/Vs vs AI") #Judul Plot
-plt1b.grid()
-plt1b.plot (v, z , "." , c="r" ) # Plot Vp/Vs vs AI dengan kode Scatter dan warna gr
-plt.xlabel("Vp/Vs") #Xlabel
-plt.ylabel("AI") #Ylabel
+plt.figure(figsize = (15, 7)) #Ukuran Bingkai
+plt.title("AI vs Vp/Vs") #Judul Plot
+plt.scatter(z,v, vmin=20, vmax=120, c=GR)# Plot AI vs Vp/Vs dengan kode Scatter dan warna gr
+plt.xlabel("Impedansi Akustik") #Xlabel
+plt.ylabel("Vp/Vs") #Ylabel
+plt.grid()
+plt.colorbar()
 
 plt.savefig('1b', dpi=300)
 
@@ -62,12 +62,13 @@ plt.savefig('1b', dpi=300)
 Lamdarho = ((v1*rho)-(v2**2*rho))*rho #Cara Mencari Lamda-rho
 MyuRho = v2**2*rho**2 #Cara Mencari nilai myu-rho
 
-plt1b = figb.add_subplot(122) #Lokasi plot ada di Matriks 2x2 di Baris 1 Colum 1
-plt1b.set_title("Lamdarho vs MyuRho") #Judul Plot
-plt1b.grid()
-plt1b.plot (Lamdarho, MyuRho , "." , c="r" ) # Plot Lamdarho vs MyuRho dengan kode Scatter dan warna gr
+plt.figure(figsize = (15, 7)) #Ukuran Bingkai
+plt.title("Lamdarho vs MyuRho") #Judul Plot
+plt.scatter (Lamdarho, MyuRho , vmin=20, vmax=120, c=GR) # Plot AI vs Vp/Vs dengan kode Scatter dan warna gr
 plt.xlabel("LamdaRho") #Xlabel
 plt.ylabel("MyuRho") #Ylabel
+plt.grid()
+plt.colorbar()
 
 plt.savefig('1c', dpi=300)
 
@@ -387,6 +388,5 @@ plt.colorbar()
 plt.xlabel("Velocity")
 plt.ylabel("Depth")
 plt.savefig('4b1',dpi=300)
-
 
 #THANK YOU PAK AGUS
